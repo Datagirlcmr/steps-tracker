@@ -1,22 +1,19 @@
 import React from 'react'
 import stimg from '../assets/feet.jpg'
-import { findRenderedComponentWithType } from 'react-dom/test-utils';
+import { Link } from 'react-router-dom';
 
-const style = {
-  backgroundColor: 'black',
-  fontSize: 70,
-  color: 'white',
-  textAlign: 'center'
-
-}
 
 const Welcome = () => (
-    <div className="welcome" style={style} >
-      <h2>Have you had a walk today?</h2>
+  <div className="bg-grad" >
+    <h2>Have you had a walk today?</h2>
 
-      <h3>Login or Signup to log your steps for today </h3>
+    <h3>Login or Signup to log your steps for today </h3>
+    <div className="btn-cont">
+
+      <button type="button" className="button is-black is-outlined is-rounded"><Link to="/login">LOGIN</Link></button>
+      <button type="button" className="button is-black is-outlined is-rounded"><Link to="/register">REGISTER</Link></button>
     </div>
-  );
+  </div>
+);
 
-  export default Welcome;
-  
+export default Welcome;
