@@ -62,7 +62,11 @@ class Register extends React.Component {
                         </button>
 
                     </form>
+                    <div>
+                        <p className="form-wrapper"> If you already have an account , Login <Link to="/login">Here</Link></p>
+                    </div>
                 </div>
+
             </div>
         );
     }
