@@ -14,10 +14,10 @@ class Dashboard extends React.Component {
     render() {
         return (
             <div>
-                <h3>Welcome {user.name}</h3>
+                <h3>Welcome User </h3>
                 <input type="number" placeholder="How many steps did you take today?" />
 
-                <button>Login
+                <button>Submit
 					<i className="zmdi zmdi-arrow-right"></i>
                 </button>
             </div>
@@ -26,3 +26,5 @@ class Dashboard extends React.Component {
         
     }
 }
+
+export default Dashboard

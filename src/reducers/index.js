@@ -1,13 +1,13 @@
 import { combineReducers, applyMiddleware, createStore } from 'redux';
 
 import thunk from 'redux-thunk';
-// import itemsReducer from './items';
+import stepsReducer from './steps';
 import userReducer from './users';
 // import singleItemReducer from './single';
 
 const finalReducer = combineReducers({
   user: userReducer,
-//   items: itemsReducer,
+  steps: stepsReducer,
 //   single: singleItemReducer,
 });
 

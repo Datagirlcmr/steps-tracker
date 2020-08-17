@@ -14,10 +14,18 @@ class Register extends React.Component {
       email: "",
       password: "",
       password_confirmation: "",
-      image: "",
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  
+  componentDidUpdate() {
+    const { store, history, fetchUser } = this.props;
+    if (store.user.auth_token !== '') {
+      // loadingIcon();
+      fetchUser(store.user.auth_token);
+      history.push('/profile');
+    }
   }
 
   handleSubmit(event) {

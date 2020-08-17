@@ -1,45 +1,45 @@
 import {
-    fetchProductsError,
-    fetchProductsPending,
-    LOGIN_USER,
-    BASE_URL,
-  } from './index';
-  
-  // import { loadingIcon } from '../helper/index';
-  
-  import { LOGIN_USER_PENDING } from './actionType';
-  
-  function loginUser(data) {
-    console.log("submitting");
-    return dispatch => {
-      console.log("print out errors at least");
-      dispatch(fetchProductsPending(LOGIN_USER_PENDING));
+  fetchProductsError,
+  fetchProductsPending,
+  LOGIN_USER,
+  BASE_URL,
+} from './index';
+
+// import { loadingIcon } from '../helper/index';
+
+import { LOGIN_USER_PENDING } from './actionType';
+
+function loginUser(data) {
+
+  return dispatch => {
+
+    dispatch(fetchProductsPending(LOGIN_USER_PENDING));
     //   loadingIcon();
-      fetch(`${BASE_URL}/auth/login`,
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json;charset=utf-8',
-          },
-          body: JSON.stringify(data),
-        })
-        .then(res => res.json())
-        .then(res => {
-          if (res.error) {
-            throw (res.error);
-          }
+    fetch(`${BASE_URL}/auth/login`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8',
+        },
+        body: JSON.stringify(data),
+      })
+      .then(res => res.json())
+      .then(res => {
+        if (res.error) {
+          throw (res.error);
+        }
         //   loadingIcon();
         console.log(res)
-          if (res.auth_token !== undefined) {
-            dispatch(LOGIN_USER(res));
-          }
-          console.log(data)
-          return res;
-        })
-        .catch(error => {
-          dispatch(fetchProductsError(error));
-        });
-    };
-  }
-  
-  export default loginUser;
+        if (res.auth_token !== undefined) {
+          dispatch(LOGIN_USER(res));
+        }
+        console.log(data)
+        return res;
+      })
+      .catch(error => {
+        dispatch(fetchProductsError(error));
+      });
+  };
+}
+
+export default loginUser;

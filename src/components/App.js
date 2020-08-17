@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import Register from '../containers/Register'
 import Login from '../containers/Login'
 import Welcome from './index';
+import Dashboard from '../containers/Dashboard';
 
 const App = () => (
   <div>
@@ -10,6 +11,7 @@ const App = () => (
       <Route path="/" component={Welcome} exact />
       <Route path="/register" component={Register} />
       <Route path="/login" component={Login} />
+      <Route path="/dashboard" component ={Dashboard} />
     </Switch>
   </div>
 );
