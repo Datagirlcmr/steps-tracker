@@ -1,6 +1,6 @@
 import {
-  fetchProductsError,
-  fetchProductsPending,
+  fetchStepsError,
+  fetchStepsPending,
   LOGIN_USER,
   BASE_URL,
 } from './index';
@@ -10,10 +10,10 @@ import {
 import { LOGIN_USER_PENDING } from './actionType';
 
 function loginUser(data) {
-
+console.log(data)
   return dispatch => {
 
-    dispatch(fetchProductsPending(LOGIN_USER_PENDING));
+    dispatch(fetchStepsPending(LOGIN_USER_PENDING));
     //   loadingIcon();
     fetch(`${BASE_URL}/auth/login`,
       {
@@ -33,11 +33,10 @@ function loginUser(data) {
         if (res.auth_token !== undefined) {
           dispatch(LOGIN_USER(res));
         }
-        console.log(data)
         return res;
       })
       .catch(error => {
-        dispatch(fetchProductsError(error));
+        dispatch(fetchStepsError(error));
       });
   };
 }

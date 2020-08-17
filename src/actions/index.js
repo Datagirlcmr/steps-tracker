@@ -1,15 +1,14 @@
 import {
-  FETCH_PRODUCTS_ERROR,
+  FETCH_STEPS_ERROR,
   FETCH_SINGLE_SUCCESS,
-  FETCH_PRODUCTS_SUCCESS,
+  FETCH_STEPS_SUCCESS,
   FETCH_USER_DETAILS,
-  REMOVE_FAV,
   LOGIN,
   LOGOUT,
   ADD_FAVORITE,
 } from './actionType';
 
-const fetchProductsPending = type => ({
+const fetchStepsPending = type => ({
   type,
 });
 
@@ -31,38 +30,33 @@ const getToken = () => {
   return JSON.parse(res);
 };
 
-const removeFav = playload => ({
-  type: REMOVE_FAV,
-  playload,
+const fetchStepsSuccess = payload => ({
+  type: FETCH_STEPS_SUCCESS,
+  payload,
 });
 
-const fetchProductsSuccess = playload => ({
-  type: FETCH_PRODUCTS_SUCCESS,
-  playload,
+const fetchStepsError = payload => ({
+  type: FETCH_STEPS_ERROR,
+  payload,
 });
 
-const fetchProductsError = playload => ({
-  type: FETCH_PRODUCTS_ERROR,
-  playload,
-});
-
-const fetchSingleItem = playload => ({
+const fetchSingleItem = payload => ({
   type: FETCH_SINGLE_SUCCESS,
-  playload,
+  payload,
 });
 
-const LOGIN_USER = playload => ({
+const LOGIN_USER = payload => ({
   type: LOGIN,
-  playload,
+  payload,
 });
 
 const LOGOUT_USER = () => ({
   type: LOGOUT,
 });
 
-const FetchUserDetails = playload => ({
+const FetchUserDetails = payload => ({
   type: FETCH_USER_DETAILS,
-  playload,
+  payload,
 });
 
 const AddFavorite = () => ({ type: ADD_FAVORITE });
@@ -70,16 +64,16 @@ const AddFavorite = () => ({ type: ADD_FAVORITE });
 const BASE_URL = 'http://localhost:3000';
 
 export {
-  fetchProductsError,
-  fetchProductsPending,
+  FETCH_STEPS_ERROR,
+  fetchStepsError,
+  fetchStepsPending,
   FetchUserDetails,
-  fetchProductsSuccess,
+  fetchStepsSuccess,
   fetchSingleItem,
   saveToken,
   LOGIN_USER,
   saveDetails,
   getDetails,
-  removeFav,
   AddFavorite,
   getToken,
   LOGOUT_USER,

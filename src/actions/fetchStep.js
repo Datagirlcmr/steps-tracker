@@ -1,11 +1,11 @@
 import {
-    fetchProductsPending, fetchSingleItem, fetchProductsError, BASE_URL,
+    fetchStepsPending, fetchSingleStep, fetchStepsError, BASE_URL,
   } from './index';
   import { FETCH_SINGLE_PENDING } from './actionType';
   
   function fetchSingle(token, id, method) {
     return dispatch => {
-      dispatch(fetchProductsPending(FETCH_SINGLE_PENDING));
+      dispatch(fetchStepsPending(FETCH_SINGLE_PENDING));
       const requestOptions = {
         method,
         headers: {
@@ -20,10 +20,10 @@ import {
           if (res.error) {
             throw res.error;
           }
-          dispatch(fetchSingleItem(res));
+          dispatch(fetchSingleStep(res));
         })
         .catch(error => {
-          dispatch(fetchProductsError(error));
+          dispatch(fetchStepsError(error));
         });
     };
   }

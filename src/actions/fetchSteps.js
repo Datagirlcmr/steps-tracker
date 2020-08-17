@@ -1,13 +1,13 @@
 import {
-    fetchProductsPending, fetchProductsSuccess, fetchProductsError, BASE_URL,
+    fetchStepsPending, fetchStepsSuccess, fetchStepsError, BASE_URL,
   } from './index';
   
-  import { FETCH_PRODUCTS_PENDING } from './actionType';
+  import { FETCH_STEPS_PENDING } from './actionType';
   
-  function fetchItems(token) {
+  function fetchSteps(token) {
     return dispatch => {
-      dispatch(fetchProductsPending(FETCH_PRODUCTS_PENDING));
-      fetch(`${BASE_URL}/items`, {
+      dispatch(fetchStepsPending(FETCH_STEPS_PENDING));
+      fetch(`${BASE_URL}/Steps`, {
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${token}`,
@@ -18,11 +18,11 @@ import {
           if (res.error) {
             throw res.error;
           }
-          dispatch(fetchProductsSuccess(res));
+          dispatch(fetchStepsSuccess(res));
         })
         .catch(error => {
-          dispatch(fetchProductsError(error));
+          dispatch(fetchStepsError(error));
         });
     };
   }
-  export default fetchItems;
+  export default fetchSteps;

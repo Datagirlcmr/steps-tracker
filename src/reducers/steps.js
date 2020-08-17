@@ -1,4 +1,4 @@
-import { FETCH_PRODUCTS_SUCCESS, FETCH_PRODUCTS_ERROR, FETCH_PRODUCTS_PENDING } from '../actions/actionType';
+import { FETCH_STEPS_SUCCESS, FETCH_STEPS_ERROR, FETCH_STEPS_PENDING } from '../actions/actionType';
 
 const initialState = {
   pending: false,
@@ -8,18 +8,18 @@ const initialState = {
 
 const stepsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case FETCH_PRODUCTS_PENDING:
+    case FETCH_STEPS_PENDING:
       return {
         ...state,
         pending: true,
       };
-    case FETCH_PRODUCTS_SUCCESS:
+    case FETCH_STEPS_SUCCESS:
       return {
         ...state,
         pending: false,
-        products: action.playload,
+        STEPS: action.playload,
       };
-    case FETCH_PRODUCTS_ERROR:
+    case FETCH_STEPS_ERROR:
       return {
         ...state,
         pending: false,

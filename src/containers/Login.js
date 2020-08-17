@@ -1,7 +1,10 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux'
 import webimg from "../assets/feet.jpg";
 import loginUser from "../actions/login";
+import fetchUser from '../actions/fetchUserDetails';
+import { loadingIcon } from '../helper/index';
 
 class Login extends React.Component {
   constructor(props) {
@@ -25,6 +28,11 @@ class Login extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     this.props.loginUser(this.state);
+    if (this.props.store.user.auth_token) {
+      // alert("You can't login if you are logged in!")
+      console.log(this.props.store.user.auth_token)
+      this.props.history.push('/dashboard')
+    }
   }
 
   render() {
@@ -75,9 +83,26 @@ class Login extends React.Component {
   }
 }
 
+Login.defaultProps = {
+  history: {},
+};
+
+Login.propTypes = {
+  loginUser: PropTypes.func.isRequired,
+  fetchUser: PropTypes.func.isRequired,
+  store: PropTypes.shape({
+    user: PropTypes.shape({
+      auth_token: PropTypes.string,
+    }).isRequired,
+  }).isRequired,
+  history: PropTypes.shape({
+    push: PropTypes.func,
+  }),
+};
+
 const mapDispatchToProps = {
   loginUser,
-//   fetchUser,
+  fetchUser,
 };
 
 const mapStateToProps = (store) => ({ store });

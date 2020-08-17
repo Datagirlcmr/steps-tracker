@@ -1,11 +1,11 @@
-import { fetchProductsPending, BASE_URL } from './index';
+import { fetchStepsPending, BASE_URL } from './index';
 import { inputValidation, loadingIcon } from '../helper/index';
-import { CREATE_ITEM_PENDING } from './actionType';
+import { CREATE_STEP_PENDING } from './actionType';
 
-function createItem(data, token, callBack) {
+function createSTEP(data, token, callBack) {
   return dispatch => {
     loadingIcon();
-    dispatch(fetchProductsPending(CREATE_ITEM_PENDING));
+    dispatch(fetchStepsPending(CREATE_STEP_PENDING));
     const event = new FormData();
     for (const name in data) {
       event.append(name, data[name]);
@@ -34,4 +34,4 @@ function createItem(data, token, callBack) {
   };
 }
 
-export default createItem;
+export default createSTEP;

@@ -1,11 +1,11 @@
-import { fetchProductsPending, BASE_URL } from './index';
+import { fetchStepsPending, BASE_URL } from './index';
 import { inputValidation, loadingIcon } from '../helper/index';
 import { FETCH_SINGLE_PENDING } from './actionType';
 
 function editItem(data, token, id, callBack) {
   return dispatch => {
     loadingIcon();
-    dispatch(fetchProductsPending(FETCH_SINGLE_PENDING));
+    dispatch(fetchStepsPending(FETCH_SINGLE_PENDING));
     const event = JSON.stringify(data);
     const requestOptions = {
       method: 'PUT',

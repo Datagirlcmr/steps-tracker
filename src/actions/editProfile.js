@@ -1,11 +1,11 @@
-import { fetchProductsPending, BASE_URL } from './index';
+import { fetchStepsPending, BASE_URL } from './index';
 import { inputValidation, loadingIcon } from '../helper/index';
 import { LOGIN_USER_PENDING } from './actionType';
 
 function editProfile(data, token, callBack) {
   return dispatch => {
     loadingIcon();
-    dispatch(fetchProductsPending(LOGIN_USER_PENDING));
+    dispatch(fetchStepsPending(LOGIN_USER_PENDING));
     const event = JSON.stringify(data);
     const requestOptions = {
       method: 'PUT',

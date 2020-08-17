@@ -1,12 +1,12 @@
 import {
-  fetchProductsPending, fetchProductsError, FetchUserDetails, BASE_URL,
+  fetchStepsPending, fetchStepsError, FetchUserDetails, BASE_URL,
 } from './index';
 
 import { LOGIN_USER_PENDING } from './actionType';
 
 function fetchUser(token) {
   return dispatch => {
-    dispatch(fetchProductsPending(LOGIN_USER_PENDING));
+    dispatch(fetchStepsPending(LOGIN_USER_PENDING));
     fetch(`${BASE_URL}/profile`, {
       headers: {
         'Content-Type': 'application/json',
@@ -21,7 +21,7 @@ function fetchUser(token) {
         dispatch(FetchUserDetails(res));
       })
       .catch(error => {
-        dispatch(fetchProductsError(error));
+        dispatch(fetchStepsError(error));
       });
   };
 }
