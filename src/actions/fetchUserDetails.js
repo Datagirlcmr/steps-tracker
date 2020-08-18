@@ -1,5 +1,5 @@
 import {
-  fetchStepsPending, fetchStepsError, FetchUserDetails, BASE_URL,
+  fetchStepsPending, fetchStepsError, fetchUserDetails, BASE_URL,
 } from './index';
 
 import { LOGIN_USER_PENDING } from './actionType';
@@ -18,7 +18,7 @@ function fetchUser(token) {
         if (res.error) {
           throw res.error;
         }
-        dispatch(FetchUserDetails(res));
+        dispatch(fetchUserDetails(res));
       })
       .catch(error => {
         dispatch(fetchStepsError(error));

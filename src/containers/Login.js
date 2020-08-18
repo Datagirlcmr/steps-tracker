@@ -19,6 +19,22 @@ class Login extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  // componentDidUpdate() {
+  //   const { store, history, fetchUser } = this.props;
+  //   if (store.user.auth_token !== '') {
+  //     loadingIcon();
+  //     fetchUser(store.user.auth_token);
+  //     history.push('/items');
+  //   }
+  // }
+
+  // handleSubmit(ev) {
+  //   const { loginUser } = this.props;
+  //   ev.preventDefault();
+  //   loginUser(this.state);
+  //   this.setState({ email: '', password: '' });
+  // }
+
   handleChange(event) {
     const prevState = this.state;
     const newState = event.target.value;
@@ -26,12 +42,15 @@ class Login extends React.Component {
   }
 
   handleSubmit(event) {
+    const { loginUser, store, history, fetchUser } = this.props;
     event.preventDefault();
-    this.props.loginUser(this.state);
-    if (this.props.store.user.auth_token) {
-      // alert("You can't login if you are logged in!")
-      console.log(this.props.store.user.auth_token)
-      this.props.history.push('/dashboard')
+    if (store.user.auth_token !== '') {
+      loginUser(this.state);
+      fetchUser(store.user.auth_token);
+      this.setState({ email: '', password: '' });
+      history.push('/dashboard')
+    } else {
+      alert("Invalid Credentials")
     }
   }
 

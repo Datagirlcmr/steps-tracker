@@ -5,7 +5,6 @@ import {
   FETCH_USER_DETAILS,
   LOGIN,
   LOGOUT,
-  ADD_FAVORITE,
 } from './actionType';
 
 const fetchStepsPending = type => ({
@@ -22,7 +21,7 @@ const saveDetails = details => {
 
 const getDetails = () => {
   const res = localStorage.getItem('details');
-  return JSON.parse(res);
+  // return JSON.parse(res);
 };
 
 const getToken = () => {
@@ -54,12 +53,10 @@ const LOGOUT_USER = () => ({
   type: LOGOUT,
 });
 
-const FetchUserDetails = payload => ({
+const fetchUserDetails = payload => ({
   type: FETCH_USER_DETAILS,
   payload,
 });
-
-const AddFavorite = () => ({ type: ADD_FAVORITE });
 
 const BASE_URL = 'http://localhost:3000';
 
@@ -67,14 +64,13 @@ export {
   FETCH_STEPS_ERROR,
   fetchStepsError,
   fetchStepsPending,
-  FetchUserDetails,
+  fetchUserDetails,
   fetchStepsSuccess,
   fetchSingleItem,
   saveToken,
   LOGIN_USER,
   saveDetails,
   getDetails,
-  AddFavorite,
   getToken,
   LOGOUT_USER,
   BASE_URL,

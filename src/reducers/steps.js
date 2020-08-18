@@ -17,13 +17,13 @@ const stepsReducer = (state = initialState, action) => {
       return {
         ...state,
         pending: false,
-        STEPS: action.playload,
+        STEPS: action.payload,
       };
     case FETCH_STEPS_ERROR:
       return {
         ...state,
         pending: false,
-        error: action.playload,
+        error: action.payload,
       };
     default:
       return state;

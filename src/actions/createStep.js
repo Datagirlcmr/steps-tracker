@@ -4,7 +4,7 @@ import { CREATE_STEP_PENDING } from './actionType';
 
 function createSTEP(data, token, callBack) {
   return dispatch => {
-    loadingIcon();
+    // loadingIcon();
     dispatch(fetchStepsPending(CREATE_STEP_PENDING));
     const event = new FormData();
     for (const name in data) {
@@ -25,7 +25,7 @@ function createSTEP(data, token, callBack) {
         }
         if (res.id === undefined) {
           inputValidation(res);
-          loadingIcon();
+          // loadingIcon();
         } else {
           callBack();
         }

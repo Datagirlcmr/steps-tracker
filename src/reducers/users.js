@@ -7,7 +7,7 @@ import {
 } from '../actions/actionType';
 
 const initialState = {
-  loged_in: false,
+  logged_in: false,
   auth_token: getToken() !== null ? getToken() : '',
   details: getDetails() !== null ? getDetails() : {
     details: {},
@@ -19,10 +19,10 @@ const initialState = {
 function userReducer(state = initialState, action) {
   switch (action.type) {
     case LOGIN:
-      saveToken(action.playload.auth_token);
+      saveToken(action.payload.auth_token);
       return {
         ...state,
-        loged_in: true,
+        logged_in: true,
         auth_token: getToken(),
         pending: false,
       };
@@ -30,13 +30,13 @@ function userReducer(state = initialState, action) {
       localStorage.clear();
       return {
         ...state,
-        loged_in: false,
+        logged_in: false,
         auth_token: '',
         details: getDetails(),
         token: getToken(),
       };
     case FETCH_USER_DETAILS:
-      saveDetails(action.playload);
+      saveDetails(action.payload);
       return {
         ...state,
         pending: false,
