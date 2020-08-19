@@ -1,5 +1,5 @@
 import { fetchStepsPending, BASE_URL } from './index';
-import { inputValidation, loadingIcon } from '../helper/index';
+import  inputValidation from '../helper/index';
 import { CREATE_STEP_PENDING } from './actionType';
 
 function createSTEP(data, token, callBack) {

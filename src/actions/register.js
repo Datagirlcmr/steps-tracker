@@ -1,5 +1,5 @@
 import { LOGIN_USER, BASE_URL } from "./index";
-import { inputValidation, loadingIcon } from "../helper/index";
+import inputValidation from "../helper/index";
 
 function createUser(data) {
   // console.log(data)
@@ -27,7 +27,6 @@ function createUser(data) {
         if (res.auth_token !== undefined) {
           dispatch(LOGIN_USER(res));
         } else {
-          loadingIcon();
           inputValidation(res);
         }
         console.log(res)

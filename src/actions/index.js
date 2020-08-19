@@ -21,7 +21,7 @@ const saveDetails = details => {
 
 const getDetails = () => {
   const res = localStorage.getItem('details');
-  // return JSON.parse(res);
+  return JSON.parse(res);
 };
 
 const getToken = () => {
@@ -39,7 +39,7 @@ const fetchStepsError = payload => ({
   payload,
 });
 
-const fetchSingleItem = payload => ({
+const fetchSingleStep = payload => ({
   type: FETCH_SINGLE_SUCCESS,
   payload,
 });
@@ -66,7 +66,7 @@ export {
   fetchStepsPending,
   fetchUserDetails,
   fetchStepsSuccess,
-  fetchSingleItem,
+  fetchSingleStep,
   saveToken,
   LOGIN_USER,
   saveDetails,

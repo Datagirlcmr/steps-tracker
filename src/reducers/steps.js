@@ -17,7 +17,7 @@ const stepsReducer = (state = initialState, action) => {
       return {
         ...state,
         pending: false,
-        STEPS: action.payload,
+        steps: action.payload,
       };
     case FETCH_STEPS_ERROR:
       return {
