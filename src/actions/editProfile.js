@@ -1,10 +1,9 @@
 import { fetchStepsPending, BASE_URL } from './index';
-import { inputValidation, loadingIcon } from '../helper/index';
+import inputValidation from '../helper/index';
 import { LOGIN_USER_PENDING } from './actionType';
 
 function editProfile(data, token, callBack) {
   return dispatch => {
-    loadingIcon();
     dispatch(fetchStepsPending(LOGIN_USER_PENDING));
     const event = JSON.stringify(data);
     const requestOptions = {
@@ -24,7 +23,6 @@ function editProfile(data, token, callBack) {
         if (res.id !== undefined) {
           callBack();
         } else {
-          loadingIcon();
           inputValidation(res);
         }
         return res;

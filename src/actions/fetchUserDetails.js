@@ -7,7 +7,7 @@ import { LOGIN_USER_PENDING } from './actionType';
 function fetchUser(token) {
   return dispatch => {
     dispatch(fetchStepsPending(LOGIN_USER_PENDING));
-    fetch(`${BASE_URL}/profile`, {
+    fetch(`${BASE_URL}/profile/`, {
       headers: {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${token}`,

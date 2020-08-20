@@ -7,7 +7,7 @@ import {
   function fetchSteps(token) {
     return dispatch => {
       dispatch(fetchStepsPending(FETCH_STEPS_PENDING));
-      fetch(`${BASE_URL}/Steps`, {
+      fetch(`${BASE_URL}/steps`, {
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${token}`,

@@ -2,9 +2,8 @@ import { fetchStepsPending, BASE_URL } from './index';
 import  inputValidation from '../helper/index';
 import { CREATE_STEP_PENDING } from './actionType';
 
-function createSTEP(data, token, callBack) {
+function createStep(data, token, callBack) {
   return dispatch => {
-    // loadingIcon();
     dispatch(fetchStepsPending(CREATE_STEP_PENDING));
     const event = new FormData();
     for (const name in data) {
@@ -25,7 +24,6 @@ function createSTEP(data, token, callBack) {
         }
         if (res.id === undefined) {
           inputValidation(res);
-          // loadingIcon();
         } else {
           callBack();
         }
@@ -34,4 +32,4 @@ function createSTEP(data, token, callBack) {
   };
 }
 
-export default createSTEP;
+export default createStep;

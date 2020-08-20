@@ -1,10 +1,9 @@
 import { fetchStepsPending, BASE_URL } from './index';
-import { inputValidation, loadingIcon } from '../helper/index';
+import inputValidation from '../helper/index';
 import { FETCH_SINGLE_PENDING } from './actionType';
 
-function editItem(data, token, id, callBack) {
+function editStep(data, token, id, callBack) {
   return dispatch => {
-    loadingIcon();
     dispatch(fetchStepsPending(FETCH_SINGLE_PENDING));
     const event = JSON.stringify(data);
     const requestOptions = {
@@ -24,7 +23,6 @@ function editItem(data, token, id, callBack) {
         if (res.id !== undefined) {
           callBack();
         } else {
-          loadingIcon();
           inputValidation(res);
         }
         return res;
@@ -33,4 +31,4 @@ function editItem(data, token, id, callBack) {
   };
 }
 
-export default editItem;
+export default editStep;

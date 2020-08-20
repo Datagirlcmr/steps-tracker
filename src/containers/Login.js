@@ -48,7 +48,7 @@ class Login extends React.Component {
       loginUser(this.state);
       fetchUser(store.user.auth_token);
       this.setState({ email: '', password: '' });
-      history.push('/dashboard')
+      history.push('/profile')
     } else {
       alert("Invalid Credentials")
     }

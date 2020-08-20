@@ -1,46 +1,45 @@
-import React from 'react';
-import webimg from '../assets/welcome.png';
-import createStep from '../actions/createStep';
-import {connect } from 'react-redux';
-// import Display from './DisplaySteps';
+import React from "react";
+import webimg from "../assets/welcome.png";
+import createStep from "../actions/createStep";
+import { connect } from "react-redux";
+import Display from "./DisplaySteps";
 
 class Dashboard extends React.Component {
-    constructor(props) {
-        super(props)
+  constructor(props) {
+    super(props);
 
-        this.state = {
-            title: '',
-            day_recorded: '',
-            steps_recorded: '',
-        }
-        this.handleChange = this.handleChange.bind(this)
-        this.handleSubmit= this.handleSubmit.bind(this)
+    this.state = {
+      title: "",
+      day_recorded: "",
+      steps_recorded: "",
+    };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
 
-    }
+  handleChange(event) {
+    const newState = event.target.value;
+    const prevState = this.state;
+    this.setState({ ...prevState, [event.target.name]: newState });
+  }
 
-    handleChange(event){
-        const newState = event.target.value;
-        const prevState = this.state
-        this.setState({...prevState, [event.target.name]: newState})
-    }
+  handleSubmit(event) {
+    event.preventDefault();
+    const { store, createStep, history } = this.props;
+    const callBack = () => {
+      this.setState({
+        title: "",
+        day_recorded: "",
+        steps_recorded: "",
+      });
+      history.push("/display");
+    };
+    createStep(this.state, store.user.auth_token, callBack);
+    // console.log(this.state.steps_recorded);
+  }
 
-    handleSubmit(event){
-        event.preventDefault();
-        const { store, createStep, history } = this.props;
-        const callBack = () => {
-          this.setState({
-            title: '',
-            day_recorded: '',
-            steps_recorded: '',
-          });
-          history.push('/display');
-        };
-        createStep(this.state, store.user.auth_token, callBack);
-        // console.log(this.state, store.user.auth_token, callBack);
-    }
-
-    render() {
-    const { title, day_recorded, steps_recorded} = this.state;
+  render() {
+    const { title, day_recorded, steps_recorded } = this.state;
     return (
       <div className="wrapper" style={{ backgroundImage: `url(${webimg})` }}>
         <div className="inner">
@@ -94,16 +93,16 @@ class Dashboard extends React.Component {
             </button>
           </form>
         </div>
-        {/* <Display steps={steps_recorded} /> */}
+        <Display steps={this.state.steps_recorded} name={this.state.title} />
       </div>
     );
   }
 }
 
 const mapDispatchToProps = {
-    createStep,
-  };
-  
-  const mapStateToProps = (store) => ({ store });
-  
-  export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
+  createStep,
+};
+
+const mapStateToProps = (store) => ({ store });
+
+export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);

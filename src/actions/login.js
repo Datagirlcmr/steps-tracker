@@ -5,8 +5,6 @@ import {
   BASE_URL,
 } from './index';
 
-// import { loadingIcon } from '../helper/index';
-
 import { LOGIN_USER_PENDING } from './actionType';
 
 function loginUser(data) {
@@ -14,7 +12,6 @@ console.log(data)
   return dispatch => {
 
     dispatch(fetchStepsPending(LOGIN_USER_PENDING));
-    //   loadingIcon();
     fetch(`${BASE_URL}/auth/login`,
       {
         method: 'POST',
@@ -28,7 +25,6 @@ console.log(data)
         if (res.error) {
           throw (res.error);
         }
-        //   loadingIcon();
         console.log(res)
         if (res.auth_token !== undefined) {
           dispatch(LOGIN_USER(res));
