@@ -39,6 +39,7 @@ function userReducer(state = initialState, action) {
       saveDetails(action.payload);
       return {
         ...state,
+        loggged_in: true,
         pending: false,
         details: getDetails(),
       };

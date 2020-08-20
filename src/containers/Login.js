@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 import webimg from "../assets/feet.jpg";
 import loginUser from "../actions/login";
 import fetchUser from '../actions/fetchUserDetails';
-import { loadingIcon } from '../helper/index';
 
 class Login extends React.Component {
   constructor(props) {
@@ -19,39 +18,25 @@ class Login extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  // componentDidUpdate() {
-  //   const { store, history, fetchUser } = this.props;
-  //   if (store.user.auth_token !== '') {
-  //     loadingIcon();
-  //     fetchUser(store.user.auth_token);
-  //     history.push('/items');
-  //   }
-  // }
-
-  // handleSubmit(ev) {
-  //   const { loginUser } = this.props;
-  //   ev.preventDefault();
-  //   loginUser(this.state);
-  //   this.setState({ email: '', password: '' });
-  // }
-
-  handleChange(event) {
-    const prevState = this.state;
-    const newState = event.target.value;
-    this.setState({ ...prevState, [event.target.name]: newState });
+  componentWillReceiveProps() {
+    const { store, history, fetchUser } = this.props;
+    if (store.user.auth_token !== '') {
+      fetchUser(store.user.auth_token);
+      history.push('/profile');
+    }
   }
 
-  handleSubmit(event) {
-    const { loginUser, store, history, fetchUser } = this.props;
-    event.preventDefault();
-    if (store.user.auth_token !== '') {
-      loginUser(this.state);
-      fetchUser(store.user.auth_token);
-      this.setState({ email: '', password: '' });
-      history.push('/profile')
-    } else {
-      alert("Invalid Credentials")
-    }
+  handleSubmit(ev) {
+    const { loginUser } = this.props;
+    ev.preventDefault();
+    loginUser(this.state);
+    this.setState({ email: '', password: '' });
+  }
+
+  handleChange(el) {
+    const newSate = el.target.value;
+    const prevState = this.state;
+    this.setState({ ...prevState, [el.target.name]: newSate });
   }
 
   render() {

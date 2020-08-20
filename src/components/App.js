@@ -5,7 +5,7 @@ import Login from '../containers/Login'
 import Welcome from './index';
 import Dashboard from '../containers/Dashboard';
 import Display from '../containers/DisplaySteps';
-import AllSteps from '../containers/AllSteps';
+import SingleStep from '../containers/SingleStep';
 import Profile from '../containers/Profile';
 
 const App = () => (
@@ -16,7 +16,7 @@ const App = () => (
       <Route path="/login" component={Login} />
       <Route path="/dashboard" component ={Dashboard} />
       <Route path="/display" component ={Display} />
-      <Route path="/steps" component={AllSteps} />
+      <Route path="/steps/:id" component={SingleStep} />
       <Route path="/profile" component={Profile} />
     </Switch>
   </div>

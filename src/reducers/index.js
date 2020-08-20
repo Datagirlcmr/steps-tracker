@@ -1,4 +1,5 @@
 import { combineReducers, applyMiddleware, createStore } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
 import thunk from 'redux-thunk';
 import stepsReducer from './steps';
@@ -13,6 +14,6 @@ const finalReducer = combineReducers({
 
 const middlewares = [thunk];
 
-const store = createStore(finalReducer, applyMiddleware(...middlewares));
+const store = createStore(finalReducer, composeWithDevTools(applyMiddleware(...middlewares)));
 
 export default store;

@@ -20,36 +20,29 @@ class Register extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  // componentDidUpdate() {
-  //   const { store, history, fetchUser } = this.props;
-  //   console.log(store)
-  //   if (store.user.auth_token !== '') {
-  //     // loadingIcon();
-  //     fetchUser(store.user.auth_token);
-  //     history.push('/steps');
-  //   }
-  // }
-
-  handleSubmit(ev) {
-    const { store, history, fetchUser, createUser } = this.props;
-    const { password, password_confirmation } = this.state
-    ev.preventDefault();
-    createUser(this.state);
-    if (store.user.auth_token !== '' && password == password_confirmation) {
-      this.setState({
-        name: '', email: '', password: '', password_confirmation: '',
-      });
-      // fetchUser(store.user.auth_token);
-      history.push('/login');
-    } else{
-      alert("one or more fields have been wrongly entered")
+  componentWillReceiveProps() {
+    const { store, history, fetchUser } = this.props;
+    if (store.user.auth_token !== '') {
+      fetchUser(store.user.auth_token);
+      history.push('/steps');
     }
   }
 
-  handleChange(event) {
-    const newState = event.target.value;
+  handleSubmit(ev) {
+    ev.preventDefault();
+    const { createUser, store } = this.props;
+    createUser(this.state);
+    if (store.user.auth_token !== '') {
+      this.setState({
+        name: '', email: '', password: '', password_confirmation: '',
+      });
+    }
+  }
+
+  handleChange(el) {
+    const newSate = el.target.value;
     const prevState = this.state;
-    this.setState({ ...prevState, [event.target.name]: newState });
+    this.setState({ ...prevState, [el.target.name]: newSate });
   }
 
   render() {

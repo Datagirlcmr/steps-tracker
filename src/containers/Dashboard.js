@@ -2,7 +2,6 @@ import React from "react";
 import webimg from "../assets/welcome.png";
 import createStep from "../actions/createStep";
 import { connect } from "react-redux";
-import Display from "./DisplaySteps";
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -11,31 +10,28 @@ class Dashboard extends React.Component {
     this.state = {
       title: "",
       day_recorded: "",
-      steps_recorded: "",
+      steps_recorded: ''
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange(event) {
-    const newState = event.target.value;
+  handleChange(el) {
+    const newSate = el.target.value;
     const prevState = this.state;
-    this.setState({ ...prevState, [event.target.name]: newState });
+    this.setState({ ...prevState, [el.target.name]: newSate });
   }
 
-  handleSubmit(event) {
-    event.preventDefault();
+  handleSubmit(ev) {
+    ev.preventDefault();
     const { store, createStep, history } = this.props;
     const callBack = () => {
       this.setState({
-        title: "",
-        day_recorded: "",
-        steps_recorded: "",
+        title: '', day_recorded: '', steps_recorded: ''
       });
-      history.push("/display");
+      history.push('/display');
     };
     createStep(this.state, store.user.auth_token, callBack);
-    // console.log(this.state.steps_recorded);
   }
 
   render() {
@@ -93,7 +89,6 @@ class Dashboard extends React.Component {
             </button>
           </form>
         </div>
-        <Display steps={this.state.steps_recorded} name={this.state.title} />
       </div>
     );
   }

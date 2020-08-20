@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
 import fetchUser from "../actions/fetchUserDetails";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
-const Profile = (props) =>{
+const Profile = (props) => {
   const { store, fetchUser } = props;
   const data = store.user.details;
 
@@ -16,7 +17,7 @@ const Profile = (props) =>{
   };
 
   if (!shouldComponentRender()) {
-    alert("Oops, there has been an error");
+    return ('Error')
   }
 
   return (
@@ -27,14 +28,19 @@ const Profile = (props) =>{
       <div>
         <h3>Welcome: {data.details.email}</h3>
       </div>
+      <div>
+        <h3>Have you taken any Steps today? </h3>
+        <Link to="/dashboard">Click Here</Link>
+        <p>to keep track of your steps</p>
+      </div>
     </div>
   );
-}
+};
 
 const mapStateToProps = (store) => ({ store });
 
 const mapDispatchToProps = {
-    fetchUser
-}
+  fetchUser,
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(Profile)
+export default connect(mapStateToProps, mapDispatchToProps)(Profile);
