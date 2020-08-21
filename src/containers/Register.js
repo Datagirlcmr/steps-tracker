@@ -1,11 +1,9 @@
 import React from "react";
-import PropTypes from 'prop-types';
-import { Link, Redirect } from "react-router-dom";
-import webimg from "../assets/feet.jpg";
+import { Link } from "react-router-dom";
+import webimg from "../assets/bg1.jpg";
 import { connect } from "react-redux";
 import createUser from "../actions/register";
 import fetchUser from "../actions/fetchUserDetails";
-// import { loadingIcon } from "../helper/index";
 
 class Register extends React.Component {
   constructor(props) {
@@ -24,7 +22,7 @@ class Register extends React.Component {
     const { store, history, fetchUser } = this.props;
     if (store.user.auth_token !== '') {
       fetchUser(store.user.auth_token);
-      history.push('/steps');
+      history.push('/login');
     }
   }
 

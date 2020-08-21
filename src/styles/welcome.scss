@@ -1,0 +1,23 @@
+html, body{
+    height: 100%;
+}
+
+.bg-grad{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url('../assets/bg1.jpg');
+}
+
+.welcome{
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 50px;
+    color: #fff;
+    font-weight: bolder;
+}
+
+.fsize-50{
+    font-size: 50px;
+}

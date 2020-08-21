@@ -1,4 +1,5 @@
 import React from "react";
+import bgImg from '../assets/bg1.jpg'
 import webimg from "../assets/welcome.png";
 import createStep from "../actions/createStep";
 import { connect } from "react-redux";
@@ -37,7 +38,7 @@ class Dashboard extends React.Component {
   render() {
     const { title, day_recorded, steps_recorded } = this.state;
     return (
-      <div className="wrapper" style={{ backgroundImage: `url(${webimg})` }}>
+      <div className="wrapper" style={{ backgroundImage: `url(${bgImg})` }}>
         <div className="inner">
           <div className="image-holder">
             <img src={webimg} alt="" />
@@ -51,7 +52,7 @@ class Dashboard extends React.Component {
                 required
                 name="title"
                 value={title}
-                placeholder="YOUR NAME"
+                placeholder="How old are you?"
                 onChange={this.handleChange}
                 className="form-control"
               />

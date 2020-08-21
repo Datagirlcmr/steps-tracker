@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import fetchUser from "../actions/fetchUserDetails";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import profileImg from "../assets/profile.jpeg";
 
 const Profile = (props) => {
   const { store, fetchUser } = props;
@@ -17,22 +18,89 @@ const Profile = (props) => {
   };
 
   if (!shouldComponentRender()) {
-    return ('Error')
+    return "Error";
   }
 
   return (
-    <div>
-      <div>
-        <h3>Welcome: {data.details.name}</h3>
+    
+    <div className="container-fluid">
+      <div className="row profile">
+        <div className="col-10 m-auto">
+          <div className="profile-sidebar">
+            <div className="bg-profile">
+              <div className="">
+                <h2 className="welcome">{`${data.details.name}'s Profile`}</h2>
+              </div>
+              <div className="profile-userpic">
+                <img src={profileImg} className="img-responsive" alt="profile-pic" />
+              </div>
+              <div className="profile-usertitle">
+                <div className="profile-usertitle-name">
+                {data.details.name}
+                </div>
+                <div className="profile-usertitle-job">
+                {data.details.email}
+                </div>
+              </div>
+            </div>
+            <div className="profile-userbuttons">
+              <Link to="/edit-profile">
+              <button type="button" className="btn welcome">Edit Profile</button>
+              </Link>
+              <Link to="/dashboard">
+              <button type="button" className="btn welcome">Enter Steps</button>
+              </Link>
+				    </div>
+
+            <div className="profile-usermenu">
+              <ul className="nav">
+                <li className="active">
+                  <a href="#">
+                  <i className="glyphicon glyphicon-home"></i>
+                  Badges </a>
+                </li>
+                <li>
+                  <a href="#">
+                  <i className="glyphicon glyphicon-user"></i>
+                  Progress </a>
+                </li>
+                <li>
+                  <a href="#" target="_blank">
+                  <i className="glyphicon glyphicon-ok"></i>
+                  StepTrack.it </a>
+                </li>
+                <li>
+                  <a href="#">
+                  <i className="glyphicon glyphicon-flag"></i>
+                  Help </a>
+                </li>
+              </ul>
+				    </div>
+          </div>
+        </div>
       </div>
-      <div>
-        <h3>Welcome: {data.details.email}</h3>
+      {/* <div className="bg-profile col-12">
+        <h2 className="welcome">{`${data.details.name}'s Profile`}</h2>
       </div>
-      <div>
-        <h3>Have you taken any Steps today? </h3>
-        <Link to="/dashboard">Click Here</Link>
-        <p>to keep track of your steps</p>
+      <div className="bg-profile col-12">
+        <img className="inner image-fluid" src={profileImg} alt="profile-img" />
+        <h3 className="text-white fsize-50 text-center">
+          {data.details.name}
+        </h3>
+        <h3 className="text-white fsize-50 text-center">
+          {data.details.email}
+        </h3>
       </div>
+      <div className="jumbotron d-flex justify-content-center">
+        <h2 className="col-5">
+          {" "}
+          <Link to="/edit-profile">Edit Profile</Link>
+        </h2>
+        <h2 className="col-5">
+        <Link to="/dashboard">Track your Steps</Link>
+        </h2>
+      </div> */}
+      
     </div>
   );
 };

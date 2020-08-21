@@ -105,7 +105,6 @@ SingleStep.propTypes = {
     }),
   }).isRequired,
   fetchSingle: PropTypes.func.isRequired,
-  addFavorite: PropTypes.func.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(SingleStep);

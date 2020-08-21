@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux'
-import webimg from "../assets/feet.jpg";
+import webimg from "../assets/bg1.jpg";
 import loginUser from "../actions/login";
 import fetchUser from '../actions/fetchUserDetails';
 
