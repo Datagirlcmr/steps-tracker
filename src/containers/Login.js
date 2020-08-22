@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux'
-import webimg from "../assets/bg1.jpg";
-import loginUser from "../actions/login";
+import { connect } from 'react-redux';
+import webimg from '../assets/bg1.jpg';
+import loginUser from '../actions/login';
 import fetchUser from '../actions/fetchUserDetails';
 
 class Login extends React.Component {
@@ -10,8 +10,8 @@ class Login extends React.Component {
     super(props);
 
     this.state = {
-      email: "",
-      password: "",
+      email: '',
+      password: '',
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -60,7 +60,7 @@ class Login extends React.Component {
                 onChange={this.handleChange}
                 className="form-control"
               />
-              <i className="zmdi zmdi-email"></i>
+              <i className="zmdi zmdi-email" />
             </div>
 
             <div className="form-wrapper">
@@ -73,12 +73,12 @@ class Login extends React.Component {
                 onChange={this.handleChange}
                 className="form-control"
               />
-              <i className="zmdi zmdi-lock"></i>
+              <i className="zmdi zmdi-lock" />
             </div>
 
-            <button>
+            <button type="button">
               Login
-              <i className="zmdi zmdi-arrow-right"></i>
+              <i className="zmdi zmdi-arrow-right" />
             </button>
           </form>
         </div>
@@ -109,6 +109,6 @@ const mapDispatchToProps = {
   fetchUser,
 };
 
-const mapStateToProps = (store) => ({ store });
+const mapStateToProps = store => ({ store });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);

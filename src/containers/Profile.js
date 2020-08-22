@@ -1,11 +1,12 @@
-import React, { useEffect } from "react";
-import fetchUser from "../actions/fetchUserDetails";
-import { connect } from "react-redux";
-import { Link } from "react-router-dom";
-import Nav from "../containers/Nav";
-import profileImg from "../assets/profile.jpeg";
+import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import fetchUser from '../actions/fetchUserDetails';
+import Nav from './Nav';
+import profileImg from '../assets/profile.jpeg';
 
-const Profile = (props) => {
+const Profile = props => {
   const { store, fetchUser } = props;
   const data = store.user.details;
 
@@ -19,7 +20,7 @@ const Profile = (props) => {
   };
 
   if (!shouldComponentRender()) {
-    return "Error";
+    return 'Error';
   }
 
   return (
@@ -73,7 +74,7 @@ const Profile = (props) => {
                   StepTrack.it
                 </li>
                 <li>
-                  <i className="glyphicon glyphicon-flag"></i>
+                  <i className="glyphicon glyphicon-flag" />
                   Help
                 </li>
               </ul>
@@ -81,35 +82,33 @@ const Profile = (props) => {
           </div>
         </div>
       </div>
-      {/* <div className="bg-profile col-12">
-        <h2 className="welcome">{`${data.details.name}'s Profile`}</h2>
-      </div>
-      <div className="bg-profile col-12">
-        <img className="inner image-fluid" src={profileImg} alt="profile-img" />
-        <h3 className="text-white fsize-50 text-center">
-          {data.details.name}
-        </h3>
-        <h3 className="text-white fsize-50 text-center">
-          {data.details.email}
-        </h3>
-      </div>
-      <div className="jumbotron d-flex justify-content-center">
-        <h2 className="col-5">
-          {" "}
-          <Link to="/edit-profile">Edit Profile</Link>
-        </h2>
-        <h2 className="col-5">
-        <Link to="/dashboard">Track your Steps</Link>
-        </h2>
-      </div> */}
     </div>
   );
 };
 
-const mapStateToProps = (store) => ({ store });
+const mapStateToProps = store => ({ store });
 
 const mapDispatchToProps = {
   fetchUser,
+};
+
+Profile.propTypes = {
+  store: PropTypes.shape({
+    items: PropTypes.shape({
+      products: PropTypes.arrayOf(PropTypes.shape({})),
+    }),
+    user: PropTypes.shape({
+      pending: PropTypes.bool.isRequired,
+      auth_token: PropTypes.string.isRequired,
+      details: PropTypes.shape({
+        details: PropTypes.shape({
+          name: PropTypes.string,
+          email: PropTypes.string,
+        }),
+      }),
+    }),
+  }).isRequired,
+  fetchUser: PropTypes.func.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Profile);

@@ -1,18 +1,20 @@
-import React from "react";
-import bgImg from "../assets/bg1.jpg";
-import webimg from "../assets/welcome.png";
-import createStep from "../actions/createStep";
-import { connect } from "react-redux";
-import Nav from "./Nav";
+/* eslint-disable camelcase */
+import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import bgImg from '../assets/bg1.jpg';
+import webimg from '../assets/welcome.png';
+import createStep from '../actions/createStep';
+import Nav from './Nav';
 
 class Dashboard extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      title: "",
-      day_recorded: "",
-      steps_recorded: "",
+      title: '',
+      day_recorded: '',
+      steps_recorded: '',
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -29,11 +31,11 @@ class Dashboard extends React.Component {
     const { store, createStep, history } = this.props;
     const callBack = () => {
       this.setState({
-        title: "",
-        day_recorded: "",
-        steps_recorded: "",
+        title: '',
+        day_recorded: '',
+        steps_recorded: '',
       });
-      history.push("/display");
+      history.push('/display');
     };
     createStep(this.state, store.user.auth_token, callBack);
   }
@@ -61,7 +63,7 @@ class Dashboard extends React.Component {
                   onChange={this.handleChange}
                   className="form-control"
                 />
-                <i className="zmdi zmdi-email"></i>
+                <i className="zmdi zmdi-email" />
               </div>
 
               <div className="form-wrapper">
@@ -73,9 +75,8 @@ class Dashboard extends React.Component {
                   onChange={this.handleChange}
                   className="form-control"
                 />
-                <i className="zmdi zmdi-email"></i>
+                <i className="zmdi zmdi-email" />
               </div>
-
               <div className="form-wrapper">
                 <input
                   type="number"
@@ -86,12 +87,12 @@ class Dashboard extends React.Component {
                   onChange={this.handleChange}
                   className="form-control"
                 />
-                <i className="zmdi zmdi-email"></i>
+                <i className="zmdi zmdi-email" />
               </div>
 
-              <button>
+              <button type="button">
                 Submit
-                <i className="zmdi zmdi-arrow-right"></i>
+                <i className="zmdi zmdi-arrow-right" />
               </button>
             </form>
           </div>
@@ -105,6 +106,30 @@ const mapDispatchToProps = {
   createStep,
 };
 
-const mapStateToProps = (store) => ({ store });
+const mapStateToProps = store => ({ store });
+
+Dashboard.defaultProps = {
+  history: {},
+};
+
+Dashboard.propTypes = {
+  store: PropTypes.shape({
+    items: PropTypes.shape({}),
+    user: PropTypes.shape({
+      auth_token: PropTypes.string.isRequired,
+      details: PropTypes.shape({
+        details: PropTypes.shape({
+          image: PropTypes.shape({}),
+          name: PropTypes.string,
+          email: PropTypes.string,
+        }),
+      }),
+    }),
+  }).isRequired,
+  createStep: PropTypes.func.isRequired,
+  history: PropTypes.shape({
+    push: PropTypes.func,
+  }),
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);

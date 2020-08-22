@@ -2,14 +2,14 @@ import {
   FETCH_SINGLE_SUCCESS,
   FETCH_STEPS_ERROR,
   FETCH_SINGLE_PENDING,
-} from "../actions/actionType";
+} from '../actions/actionType';
 
 const initialState = {
   pending: false,
   details: {
     step: {},
   },
-  error: "",
+  error: '',
 };
 
 const singleStepReducer = (state = initialState, action) => {

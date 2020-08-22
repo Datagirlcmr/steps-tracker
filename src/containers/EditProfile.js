@@ -1,8 +1,9 @@
+/* eslint-disable react/destructuring-assignment */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import editProfile from '../actions/editProfile';
-import webimg from '../assets/bg1.jpg'
+import webimg from '../assets/bg1.jpg';
 
 class EditProfile extends React.Component {
   constructor(props) {
@@ -32,62 +33,62 @@ class EditProfile extends React.Component {
   }
 
   render() {
-    const { name, email, password} = this.state;
+    const { name, email, password } = this.state;
     return (
-        <div className="wrapper" style={{ backgroundImage: `url(${webimg})` }}>
-          <div className="inner">
-            <div className="image-holder">
-              <img src={webimg} alt="" />
-            </div>
-            <form onSubmit={this.handleSubmit}>
-              <h3>Edit Profile</h3>
-  
-              <div className="form-group">
-                <input
-                  type="text"
-                  required
-                  name="name"
-                  value={name}
-                  placeholder="Name"
-                  onChange={this.handleChange}
-                  className="form-control"
-                />
-              </div>
-  
-              <div className="form-wrapper">
-                <input
-                  type="email"
-                  required
-                  name="email"
-                  value={email}
-                  placeholder="Email Address"
-                  onChange={this.handleChange}
-                  className="form-control"
-                />
-                <i className="zmdi zmdi-email"></i>
-              </div>
-  
-              <div className="form-wrapper">
-                <input
-                  type="password"
-                  required
-                  name="password"
-                  value={password}
-                  placeholder="Password"
-                  onChange={this.handleChange}
-                  className="form-control"
-                />
-                <i className="zmdi zmdi-lock"></i>
-              </div>
-  
-              <button>
-                Update
-                  <i className="zmdi zmdi-arrow-right"></i>
-              </button>
-            </form>
+      <div className="wrapper" style={{ backgroundImage: `url(${webimg})` }}>
+        <div className="inner">
+          <div className="image-holder">
+            <img src={webimg} alt="" />
           </div>
+          <form onSubmit={this.handleSubmit}>
+            <h3>Edit Profile</h3>
+
+            <div className="form-group">
+              <input
+                type="text"
+                required
+                name="name"
+                value={name}
+                placeholder="Name"
+                onChange={this.handleChange}
+                className="form-control"
+              />
+            </div>
+
+            <div className="form-wrapper">
+              <input
+                type="email"
+                required
+                name="email"
+                value={email}
+                placeholder="Email Address"
+                onChange={this.handleChange}
+                className="form-control"
+              />
+              <i className="zmdi zmdi-email" />
+            </div>
+
+            <div className="form-wrapper">
+              <input
+                type="password"
+                required
+                name="password"
+                value={password}
+                placeholder="Password"
+                onChange={this.handleChange}
+                className="form-control"
+              />
+              <i className="zmdi zmdi-lock" />
+            </div>
+
+            <button type="button">
+              Update
+              <i className="zmdi zmdi-arrow-right" />
+            </button>
+          </form>
         </div>
-      );
+      </div>
+    );
   }
 }
 
