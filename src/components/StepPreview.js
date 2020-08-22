@@ -31,7 +31,7 @@ const StepPreview = ({ props }) => {
 StepPreview.defaultProps = {
   title: '',
   day_recorded: '',
-  steps_recorded: '',
+  steps_recorded: 0,
   id: 0,
   props: {},
 };
