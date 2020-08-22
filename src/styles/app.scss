@@ -56,6 +56,7 @@ a:hover {
   max-width: 850px;
   margin: auto;
   display: flex;
+
   .image-holder {
     width: 50%;
   }
@@ -78,20 +79,13 @@ a:hover {
 
 .form-group {
   display: flex;
+
   input {
     width: 50%;
+
     &:first-child {
       margin-right: 25px;
     }
-  }
-}
-
-.form-wrapper {
-  position: relative;
-  i {
-    position: absolute;
-    bottom: 9px;
-    right: 0;
   }
 }
 
@@ -105,21 +99,25 @@ a:hover {
   height: 30px;
   padding: 0;
   margin-bottom: 25px;
+
   &::-webkit-input-placeholder {
     font-size: 13px;
     color: #333;
     font-family: Georgia, 'Times New Roman', Times, serif;
   }
+
   &::-moz-placeholder {
     font-size: 13px;
     color: #333;
     font-family: Georgia, 'Times New Roman', Times, serif;
   }
+
   &:-ms-input-placeholder {
     font-size: 13px;
     color: #333;
     font-family: Georgia, 'Times New Roman', Times, serif;
   }
+
   &:-moz-placeholder {
     font-size: 13px;
     color: #333;
@@ -156,14 +154,17 @@ button {
   transform: perspective(1px) translateZ(0);
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
+
   i {
     margin-left: 10px;
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
   }
+
   &:hover,
   &:focus,
   &:active {
+
     i {
       -webkit-animation-name: hvr-icon-wobble-horizontal;
       animation-name: hvr-icon-wobble-horizontal;
@@ -176,6 +177,17 @@ button {
     }
   }
 }
+
+.form-wrapper {
+  position: relative;
+
+  i {
+    position: absolute;
+    bottom: 9px;
+    right: 0;
+  }
+}
+
 @-webkit-keyframes hvr-icon-wobble-horizontal {
   16.65% {
     -webkit-transform: translateX(6px);
@@ -202,6 +214,7 @@ button {
     transform: translateX(0);
   }
 }
+
 @keyframes hvr-icon-wobble-horizontal {
   16.65% {
     -webkit-transform: translateX(6px);
