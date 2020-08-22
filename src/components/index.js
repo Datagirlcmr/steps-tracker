@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Welcome = () => (
   <div className="bg-grad wrapper">
-    <div className="welcome">
+    <div className="welcome form-wrapper">
       <h2 className="welcome">STEPTRACK.it</h2>
       <h3 className="welcome">Help you to walk daily </h3>
     </div>
