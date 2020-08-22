@@ -130,6 +130,7 @@ select {
   -webkit-appearance: none;
   cursor: pointer;
   padding-left: 20px;
+
   option[value=""][disabled] {
     display: none;
   }
@@ -160,7 +161,20 @@ button {
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
   }
+  
+}
 
+.form-wrapper {
+  position: relative;
+
+  i {
+    position: absolute;
+    bottom: 9px;
+    right: 0;
+  }
+}
+
+button {
   &:hover,
   &:focus,
   &:active {
@@ -178,37 +192,32 @@ button {
   }
 }
 
-.form-wrapper {
-  position: relative;
-
-  i {
-    position: absolute;
-    bottom: 9px;
-    right: 0;
-  }
-}
-
 @-webkit-keyframes hvr-icon-wobble-horizontal {
   16.65% {
     -webkit-transform: translateX(6px);
     transform: translateX(6px);
   }
+
   33.3% {
     -webkit-transform: translateX(-5px);
     transform: translateX(-5px);
   }
+
   49.95% {
     -webkit-transform: translateX(4px);
     transform: translateX(4px);
   }
+
   66.6% {
     -webkit-transform: translateX(-2px);
     transform: translateX(-2px);
   }
+
   83.25% {
     -webkit-transform: translateX(1px);
     transform: translateX(1px);
   }
+
   100% {
     -webkit-transform: translateX(0);
     transform: translateX(0);
@@ -220,22 +229,27 @@ button {
     -webkit-transform: translateX(6px);
     transform: translateX(6px);
   }
+
   33.3% {
     -webkit-transform: translateX(-5px);
     transform: translateX(-5px);
   }
+
   49.95% {
     -webkit-transform: translateX(4px);
     transform: translateX(4px);
   }
+
   66.6% {
     -webkit-transform: translateX(-2px);
     transform: translateX(-2px);
   }
+
   83.25% {
     -webkit-transform: translateX(1px);
     transform: translateX(1px);
   }
+
   100% {
     -webkit-transform: translateX(0);
     transform: translateX(0);
@@ -262,11 +276,13 @@ button {
     .image-holder {
       width: 100%;
     }
+
     form {
       width: 100%;
       padding: 40px 0 30px;
     }
   }
+  
   button {
     margin-top: 60px;
   }
