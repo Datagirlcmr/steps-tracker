@@ -161,7 +161,6 @@ button {
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
   }
-  
 }
 
 .form-wrapper {
@@ -174,21 +173,18 @@ button {
   }
 }
 
-button {
-  &:hover,
-  &:focus,
-  &:active {
-
-    i {
-      -webkit-animation-name: hvr-icon-wobble-horizontal;
-      animation-name: hvr-icon-wobble-horizontal;
-      -webkit-animation-duration: 1s;
-      animation-duration: 1s;
-      -webkit-animation-timing-function: ease-in-out;
-      animation-timing-function: ease-in-out;
-      -webkit-animation-iteration-count: 1;
-      animation-iteration-count: 1;
-    }
+&:hover,
+&:focus,
+&:active {
+  i {
+    -webkit-animation-name: hvr-icon-wobble-horizontal;
+    animation-name: hvr-icon-wobble-horizontal;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
   }
 }
 
@@ -273,6 +269,7 @@ button {
 @media (max-width: 767px) {
   .inner {
     display: block;
+
     .image-holder {
       width: 100%;
     }
