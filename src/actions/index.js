@@ -58,7 +58,7 @@ const fetchUserDetails = payload => ({
   payload,
 });
 
-const BASE_URL = 'http://localhost:3000';
+const BASE_URL = 'https://obscure-cove-15104.herokuapp.com';
 
 export {
   FETCH_STEPS_ERROR,

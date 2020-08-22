@@ -1,9 +1,10 @@
+/* eslint-disable no-restricted-syntax */
+/* eslint-disable guard-for-in */
 import { fetchStepsPending, BASE_URL } from './index';
-import  inputValidation from '../helper/index';
+import inputValidation from '../helper/index';
 import { CREATE_STEP_PENDING } from './actionType';
 
 function createStep(data, token, callBack) {
-  console.log(data)
   return dispatch => {
     dispatch(fetchStepsPending(CREATE_STEP_PENDING));
     const event = new FormData();
