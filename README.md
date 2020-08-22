@@ -110,7 +110,7 @@ this project uses jest from testing , to run the tests type `npm test`
 
 ## Authors
 
-👤 **Tresor bireke**
+👤 **Selma Ndi**
 
 - Github: [@Datagirlcmr](https://github.com/Datagirlcmr)
 - Twitter: [@SelmaNdi](https://twitter.com/SelmaNdi)
