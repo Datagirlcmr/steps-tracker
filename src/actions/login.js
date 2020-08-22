@@ -8,9 +8,7 @@ import {
 import { LOGIN_USER_PENDING } from './actionType';
 
 function loginUser(data) {
-console.log(data)
   return dispatch => {
-
     dispatch(fetchStepsPending(LOGIN_USER_PENDING));
     fetch(`${BASE_URL}/auth/login`,
       {
@@ -25,7 +23,6 @@ console.log(data)
         if (res.error) {
           throw (res.error);
         }
-        console.log(res)
         if (res.auth_token !== undefined) {
           dispatch(LOGIN_USER(res));
         }

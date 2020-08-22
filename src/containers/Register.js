@@ -20,7 +20,7 @@ class Register extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  UNSAFE_componentWillReceiveProps() {
+  componentWillReceiveProps() {
     const { store, history, fetchUser } = this.props;
     if (store.user.auth_token !== '') {
       fetchUser(store.user.auth_token);
