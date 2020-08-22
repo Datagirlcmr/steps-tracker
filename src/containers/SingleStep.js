@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import ReactStoreIndicator from "react-score-indicator";
+import Nav from "./Nav";
 import PropTypes from "prop-types";
 import fetchSingle from "../actions/fetchStep";
 
@@ -9,18 +10,7 @@ const SingleStep = (props) => {
   useEffect(() => {
     fetchSingle(store.user.auth_token, match.params.id, "GET");
   }, [fetchSingle, store.user.auth_token, match.params.id]);
-    const { single } = store;
-  //   const handleClick = () => {
-  //     if (single.details.liked === true) {
-  //       addFavorite(store.user.auth_token, single.details.item.id, 'DELETE');
-  //     } else {
-  //       addFavorite(store.user.auth_token, single.details.item.id, 'POST');
-  //     }
-  //   };
-//   const handleDelete = () => {
-//     fetchSingle(single.user.auth_token, match.params.id, "DELETE");
-//     history.push("/steps");
-//   };
+  const { single } = store;
 
   const shouldComponentRender = () => {
     if (single.details.step.steps_recorded === undefined) return false;
@@ -28,22 +18,24 @@ const SingleStep = (props) => {
   };
 
   return (
-    <div>
-      <div className="wrap-details">
-        <div className="item-details shadow">
+      <div >
+        <Nav />
+        <div className="wrapper jumbotron col-11 m-auto">
           {shouldComponentRender() === true ? (
             <div className="full-info">
+              <div className="welcome text-secondary">
+                <p>{single.details.step.day_recorded}</p>
+              </div>
               <div>
-                <h4>About this item</h4>
+                <ReactStoreIndicator value={single.details.step.steps_recorded} maxValue={10000} />
+              </div>
+              <div className="welcome text-secondary">
+                <h4>Age</h4>
                 <p>{single.details.step.title}</p>
               </div>
-              <div>
-                <h4>contact</h4>
+              <div className="welcome text-secondary">
+                <h4>Steps Today</h4>
                 <p>{single.details.step.steps_recorded}</p>
-              </div>
-              <div>
-                <h4>contact</h4>
-                <p>{single.details.step.day_recorded}</p>
               </div>
             </div>
           ) : (
@@ -51,7 +43,6 @@ const SingleStep = (props) => {
           )}
         </div>
       </div>
-    </div>
   );
 };
 

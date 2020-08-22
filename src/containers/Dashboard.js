@@ -1,8 +1,9 @@
 import React from "react";
-import bgImg from '../assets/bg1.jpg'
+import bgImg from "../assets/bg1.jpg";
 import webimg from "../assets/welcome.png";
 import createStep from "../actions/createStep";
 import { connect } from "react-redux";
+import Nav from "./Nav";
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -11,7 +12,7 @@ class Dashboard extends React.Component {
     this.state = {
       title: "",
       day_recorded: "",
-      steps_recorded: ''
+      steps_recorded: "",
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -28,9 +29,11 @@ class Dashboard extends React.Component {
     const { store, createStep, history } = this.props;
     const callBack = () => {
       this.setState({
-        title: '', day_recorded: '', steps_recorded: ''
+        title: "",
+        day_recorded: "",
+        steps_recorded: "",
       });
-      history.push('/display');
+      history.push("/display");
     };
     createStep(this.state, store.user.auth_token, callBack);
   }
@@ -38,57 +41,60 @@ class Dashboard extends React.Component {
   render() {
     const { title, day_recorded, steps_recorded } = this.state;
     return (
-      <div className="wrapper" style={{ backgroundImage: `url(${bgImg})` }}>
-        <div className="inner">
-          <div className="image-holder">
-            <img src={webimg} alt="" />
+      <div>
+        <Nav />
+        <div className="wrapper" style={{ backgroundImage: `url(${bgImg})` }}>
+          <div className="inner">
+            <div className="image-holder">
+              <img src={webimg} alt="" />
+            </div>
+            <form onSubmit={this.handleSubmit}>
+              <h3>Welcome User</h3>
+
+              <div className="form-wrapper">
+                <input
+                  type="text"
+                  required
+                  name="title"
+                  value={title}
+                  placeholder="How old are you?"
+                  onChange={this.handleChange}
+                  className="form-control"
+                />
+                <i className="zmdi zmdi-email"></i>
+              </div>
+
+              <div className="form-wrapper">
+                <input
+                  type="date"
+                  required
+                  name="day_recorded"
+                  value={day_recorded}
+                  onChange={this.handleChange}
+                  className="form-control"
+                />
+                <i className="zmdi zmdi-email"></i>
+              </div>
+
+              <div className="form-wrapper">
+                <input
+                  type="number"
+                  required
+                  name="steps_recorded"
+                  value={steps_recorded}
+                  placeholder="Enter the Number of Steps Taken"
+                  onChange={this.handleChange}
+                  className="form-control"
+                />
+                <i className="zmdi zmdi-email"></i>
+              </div>
+
+              <button>
+                Submit
+                <i className="zmdi zmdi-arrow-right"></i>
+              </button>
+            </form>
           </div>
-          <form onSubmit={this.handleSubmit}>
-            <h3>Welcome User</h3>
-
-            <div className="form-wrapper">
-              <input
-                type="text"
-                required
-                name="title"
-                value={title}
-                placeholder="How old are you?"
-                onChange={this.handleChange}
-                className="form-control"
-              />
-              <i className="zmdi zmdi-email"></i>
-            </div>
-
-            <div className="form-wrapper">
-              <input
-                type="date"
-                required
-                name="day_recorded"
-                value={day_recorded}
-                onChange={this.handleChange}
-                className="form-control"
-              />
-              <i className="zmdi zmdi-email"></i>
-            </div>
-
-            <div className="form-wrapper">
-              <input
-                type="number"
-                required
-                name="steps_recorded"
-                value={steps_recorded}
-                placeholder="Enter the Number of Steps Taken"
-                onChange={this.handleChange}
-                className="form-control"
-              />
-              <i className="zmdi zmdi-email"></i>
-            </div>
-
-            <button>
-              Submit
-              <i className="zmdi zmdi-arrow-right"></i>
-            </button>
-          </form>
         </div>
       </div>
     );

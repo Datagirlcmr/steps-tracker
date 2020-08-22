@@ -7,6 +7,7 @@ import Dashboard from '../containers/Dashboard';
 import Display from '../containers/DisplaySteps';
 import SingleStep from '../containers/SingleStep';
 import Profile from '../containers/Profile';
+import EditProfile from '../containers/EditProfile';
 
 const App = () => (
   <div>
@@ -18,6 +19,7 @@ const App = () => (
       <Route path="/display" component ={Display} />
       <Route path="/steps/:id" component={SingleStep} />
       <Route path="/profile" component={Profile} />
+      <Route path="/edit-profile" component={EditProfile} />
     </Switch>
   </div>
 );

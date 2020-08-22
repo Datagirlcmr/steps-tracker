@@ -9,9 +9,9 @@ const StepPreview = ({ props }) => {
       <Link to={`/steps/${id}`}>
         <div className="prev-text">
           <div>
-            <p>{title}</p>
             <p>{day_recorded}</p>
-            <p>{steps_recorded}</p>
+            <p>Age:{title}</p>
+            <p>Number ot Steps Taken: {steps_recorded}</p>
           </div>
         </div>
       </Link>

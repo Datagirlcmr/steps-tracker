@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import fetchUser from "../actions/fetchUserDetails";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import Nav from "../containers/Nav";
 import profileImg from "../assets/profile.jpeg";
 
 const Profile = (props) => {
@@ -22,60 +23,61 @@ const Profile = (props) => {
   }
 
   return (
-    
     <div className="container-fluid">
+      <Nav />
       <div className="row profile">
         <div className="col-10 m-auto">
           <div className="profile-sidebar">
             <div className="bg-profile">
-              <div className="">
+              <div className="welcome">
                 <h2 className="welcome">{`${data.details.name}'s Profile`}</h2>
               </div>
               <div className="profile-userpic">
-                <img src={profileImg} className="img-responsive" alt="profile-pic" />
+                <img
+                  src={profileImg}
+                  className="img-responsive"
+                  alt="profile-pic"
+                />
               </div>
               <div className="profile-usertitle">
                 <div className="profile-usertitle-name">
-                {data.details.name}
+                  {data.details.name}
                 </div>
                 <div className="profile-usertitle-job">
-                {data.details.email}
+                  {data.details.email}
                 </div>
               </div>
             </div>
             <div className="profile-userbuttons">
               <Link to="/edit-profile">
-              <button type="button" className="btn welcome">Edit Profile</button>
+                <button type="button" className="btn welcome">
+                  Edit Profile
+                </button>
               </Link>
               <Link to="/dashboard">
-              <button type="button" className="btn welcome">Enter Steps</button>
+                <button type="button" className="btn welcome">
+                  Enter Steps
+                </button>
               </Link>
-				    </div>
+            </div>
 
-            <div className="profile-usermenu">
+            <div className="profile-usermenu welcome text-primary">
               <ul className="nav">
-                <li className="active">
-                  <a href="#">
-                  <i className="glyphicon glyphicon-home"></i>
-                  Badges </a>
+                <li className="pr-5">
+                  Badges
+                </li>
+                <li className="pr-5">
+                  Progress
+                </li>
+                <li className="pr-5">
+                  StepTrack.it
                 </li>
                 <li>
-                  <a href="#">
-                  <i className="glyphicon glyphicon-user"></i>
-                  Progress </a>
-                </li>
-                <li>
-                  <a href="#" target="_blank">
-                  <i className="glyphicon glyphicon-ok"></i>
-                  StepTrack.it </a>
-                </li>
-                <li>
-                  <a href="#">
                   <i className="glyphicon glyphicon-flag"></i>
-                  Help </a>
+                  Help
                 </li>
               </ul>
-				    </div>
+            </div>
           </div>
         </div>
       </div>
@@ -100,7 +102,6 @@ const Profile = (props) => {
         <Link to="/dashboard">Track your Steps</Link>
         </h2>
       </div> */}
-      
     </div>
   );
 };
