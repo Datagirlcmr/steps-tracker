@@ -173,20 +173,20 @@ button {
   }
 }
 
-&:hover,
-&:focus,
-&:active {
-  i {
-    -webkit-animation-name: hvr-icon-wobble-horizontal;
-    animation-name: hvr-icon-wobble-horizontal;
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
-    -webkit-animation-timing-function: ease-in-out;
-    animation-timing-function: ease-in-out;
-    -webkit-animation-iteration-count: 1;
-    animation-iteration-count: 1;
-  }
-}
+// &:hover,
+// &:focus,
+// &:active {
+//   i {
+//     -webkit-animation-name: hvr-icon-wobble-horizontal;
+//     animation-name: hvr-icon-wobble-horizontal;
+//     -webkit-animation-duration: 1s;
+//     animation-duration: 1s;
+//     -webkit-animation-timing-function: ease-in-out;
+//     animation-timing-function: ease-in-out;
+//     -webkit-animation-iteration-count: 1;
+//     animation-iteration-count: 1;
+//   }
+// }
 
 @-webkit-keyframes hvr-icon-wobble-horizontal {
   16.65% {
