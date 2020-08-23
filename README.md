@@ -12,7 +12,7 @@ https://github.com/Datagirlcmr/daily-steps-api
 
 ## Screenshots and Walkthrough
 
-<!-- https://www.loom.com/share/9b3e28f9973d4148bc7359015e93704e -->
+https://www.loom.com/share/dd1bd407504a4ed88a64fc1b59a875c0
 
 
 
