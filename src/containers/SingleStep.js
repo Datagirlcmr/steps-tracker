@@ -30,7 +30,7 @@ const SingleStep = props => {
               <ReactStoreIndicator value={single.details.step.steps_recorded} maxValue={10000} />
             </div>
             <div className="welcome text-secondary">
-              <h4>Age</h4>
+              <h4>Weight</h4>
               <p>{single.details.step.title}</p>
             </div>
             <div className="welcome text-secondary">

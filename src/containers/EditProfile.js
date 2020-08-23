@@ -81,7 +81,7 @@ class EditProfile extends React.Component {
               <i className="zmdi zmdi-lock" />
             </div>
 
-            <button type="button">
+            <button type="submit">
               Update
               <i className="zmdi zmdi-arrow-right" />
             </button>

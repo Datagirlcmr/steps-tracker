@@ -1,9 +1,9 @@
 
 # Steps Tracker
 
-### This is a single page application built with react,redux and rails
+> This is a single page application built with react,redux and rails
 
-#### The app provides a platform where users can track their steps simply by inputting the steps taken each day. Every Input has a time stamp, that way you can track your steps.
+> The app provides a platform where users can track their steps simply by inputting the steps taken each day. Every Input has a time stamp, that way you can track your steps.
 <hr />
 
 ## RoR API Endpoint
@@ -18,48 +18,52 @@ https://github.com/Datagirlcmr/daily-steps-api
 
 > To be able to use the app, a user must sign up without which he won't be able to enjoy the full benefits. Attempting to use the app without validation will through errors.
 
-<!-- <p align="center"> 
+<p align="center"> 
 <img src="./images/home.png">
-</p> -->
+</p>
 
 <hr />
 
 > As soon as you register, you will be redirected to your Profile Page. Here the user is presented with the option of either editing their profile or Tracking their steps. 
 
-<!-- <p align="center"> 
-<img src="./images/details.png">
-</p> -->
+<p align="center"> 
+<img src="./images/profile.png">
+</p>
 
 <hr />
 
 > Choosing to track your steps redirects the user to a form where he is prompted to input his age, steps recorded and a date. Because of the availability of a time stamp, a user can enter their steps as per a day in the past. 
 
-<!-- <p align="center"> 
-<img src="./images/details-a.png">
-</p> -->
+<p align="center"> 
+<img src="./images/form.png">
+</p>
 
 <hr />
 
 
 > A successfull submission of the steps tracking form redirects the user to an index page displaying all the steps he has entered in the past. Clicking on any of these steps, opens up to more details about that particular input.
 
-<!-- <p align="center"> 
-<img src="./images/profile.png">
-</p> -->
+<p align="center"> 
+<img src="./images/all.png">
+</p>
 
 <hr />
 
-<!-- <p align="center"> 
-<img src="./images/profile-a.png">
-</p> -->
+<p align="center"> 
+<img src="./images/details.png">
+</p>
 
 <hr />
 
 > The remaining pages are the login/signup forms
 
-<!-- <p align="center"> 
-<img src="./images/form.png">
-</p> -->
+<p align="center"> 
+<img src="./images/signup.png">
+</p>
+
+<p align="center"> 
+<img src="./images/login.png">
+</p>
 
 
 ## Built With

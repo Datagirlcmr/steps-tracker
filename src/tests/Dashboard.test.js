@@ -13,7 +13,7 @@ test('renders learn react link', () => {
       </Provider>
     </Router>,
   );
-  expect(screen.getByPlaceholderText('How old are you?')).toBeInTheDocument();
+  expect(screen.getByPlaceholderText('Enter Your Weight')).toBeInTheDocument();
   expect(screen.getByPlaceholderText('Enter the Number of Steps Taken')).toBeInTheDocument();
   expect(screen.getByText(/Welcome User/i)).toBeInTheDocument();
 });

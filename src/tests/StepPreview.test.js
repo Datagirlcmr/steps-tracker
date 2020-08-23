@@ -16,6 +16,6 @@ test('renders learn react link', () => {
       <StepPreview props={props} />
     </Router>,
   );
-  expect(screen.getByText('Age:')).toBeInTheDocument();
+  expect(screen.getByText('Weight:')).toBeInTheDocument();
   expect(screen.getByText(/1000/i)).toBeInTheDocument();
 });
