@@ -7,9 +7,7 @@ import { Link } from 'react-router-dom';
 import { LOGOUT_USER } from '../actions/index';
 
 const Nav = props => {
-  const {
-    store, logout,
-  } = props;
+  const { store, logout } = props;
 
   const handleClick = () => {
     logout();
@@ -22,16 +20,20 @@ const Nav = props => {
     }
   }
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-dark">
-      <ul className="navbar-nav mr-auto">
-        <li className="nav-item welcome pl-5 mr-5 ml-5">
-          <Link className="nav-item" to="/">Home</Link>
+    <nav className="navbar navbar-expand-sm bg-light">
+      <Link className="navbar-brand nav" to="/">
+        StepTrack.it
+      </Link>
+      <ul className="navbar-nav">
+        <li className="nav-item ">
+          <Link className="nav-link nav" to={path}>
+            Profile
+          </Link>
         </li>
-        <li className="nav-item welcome pl-5 mr-5">
-          <Link className="nav-item" to={path}>Profile</Link>
-        </li>
-        <li className="nav-item welcome pl-5 ml-5" onClick={handleClick}>
-          <Link className="nav-item" to="/">Logout</Link>
+        <li className="nav-item" onClick={handleClick}>
+          <Link className="nav-link nav" to="/">
+            Logout
+          </Link>
         </li>
       </ul>
     </nav>
@@ -58,8 +60,7 @@ Nav.propTypes = {
     details: PropTypes.shape({}),
     user: PropTypes.shape({
       details: PropTypes.shape({
-        details: PropTypes.shape({
-        }),
+        details: PropTypes.shape({}),
       }),
     }),
   }).isRequired,

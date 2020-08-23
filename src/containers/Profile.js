@@ -27,7 +27,7 @@ const Profile = props => {
     <div className="container-fluid">
       <Nav />
       <div className="row profile">
-        <div className="col-md-3 m-auto">
+        <div className="row-profile">
           <div className="profile-sidebar">
             <div className="bg-profile">
               <div className="welcome">
