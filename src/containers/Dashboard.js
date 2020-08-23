@@ -90,7 +90,7 @@ class Dashboard extends React.Component {
                 <i className="zmdi zmdi-email" />
               </div>
 
-              <button type="button">
+              <button type="submit">
                 Submit
                 <i className="zmdi zmdi-arrow-right" />
               </button>

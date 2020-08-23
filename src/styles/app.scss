@@ -77,6 +77,12 @@ a:hover {
   }
 }
 
+.link {
+  text-decoration-style: none;
+  color: #fff;
+  font-size: 20px;
+}
+
 .form-group {
   display: flex;
 
@@ -139,7 +145,8 @@ select {
 button {
   border: none;
   width: 164px;
-  height: 51px;
+  height: 40px;
+  border-radius: 50%;
   margin: auto;
   margin-top: 40px;
   cursor: pointer;

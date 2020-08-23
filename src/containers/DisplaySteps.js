@@ -19,9 +19,9 @@ const Display = props => {
   };
 
   return (
-    <div className="">
+    <div className="container">
       <Nav />
-      <div className="wrapper">
+      <div className="row col-10 col-md-3 m-auto">
         {shouldComponentRender() === true ? (
           <div className="welcome text-secondary">
             {store.steps.steps.map(el => (

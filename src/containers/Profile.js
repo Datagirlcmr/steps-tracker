@@ -27,7 +27,7 @@ const Profile = props => {
     <div className="container-fluid">
       <Nav />
       <div className="row profile">
-        <div className="col-10 m-auto">
+        <div className="col-md-3 m-auto">
           <div className="profile-sidebar">
             <div className="bg-profile">
               <div className="welcome">
@@ -58,6 +58,11 @@ const Profile = props => {
               <Link to="/dashboard">
                 <button type="button" className="btn welcome">
                   Enter Steps
+                </button>
+              </Link>
+              <Link to="/display">
+                <button type="button" className="btn welcome">
+                  View Steps
                 </button>
               </Link>
             </div>

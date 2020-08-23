@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -28,9 +30,9 @@ const Nav = props => {
         <li className="nav-item welcome pl-5 mr-5">
           <Link className="nav-item" to={path}>Profile</Link>
         </li>
-        <button type="button" className="nav-item welcome pl-5 ml-5" onClick={handleClick}>
+        <li className="nav-item welcome pl-5 ml-5" onClick={handleClick}>
           <Link className="nav-item" to="/">Logout</Link>
-        </button>
+        </li>
       </ul>
     </nav>
   );

@@ -18,3 +18,9 @@ body {
   color: #fff;
   font-weight: bolder;
 }
+
+@media (max-width: 767px) {
+  .welcome{
+    font-size: 30px;
+  }
+}
