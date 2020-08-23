@@ -19,11 +19,11 @@ const Display = props => {
   };
 
   return (
-    <div className="container">
+    <div className="container-fluid">
       <Nav />
-      <div className="row col-10 col-md-3 m-auto">
+      <div className="row profile">
         {shouldComponentRender() === true ? (
-          <div className="welcome text-secondary">
+          <div className="profile-usertitle-name">
             {store.steps.steps.map(el => (
               <div className="d-flex p-5">
                 <ReactStoreIndicator

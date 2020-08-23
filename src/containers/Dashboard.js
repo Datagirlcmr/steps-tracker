@@ -59,7 +59,7 @@ class Dashboard extends React.Component {
                   required
                   name="title"
                   value={title}
-                  placeholder="How old are you?"
+                  placeholder="Enter Your Weight"
                   onChange={this.handleChange}
                   className="form-control"
                 />

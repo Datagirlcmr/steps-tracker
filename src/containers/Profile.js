@@ -67,7 +67,7 @@ const Profile = props => {
               </Link>
             </div>
 
-            <div className="profile-usermenu welcome text-primary">
+            <div className="profile-usermenu">
               <ul className="nav">
                 <li className="pr-5">
                   Badges

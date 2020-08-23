@@ -20,7 +20,7 @@ const SingleStep = props => {
   return (
     <div>
       <Nav />
-      <div className="wrapper jumbotron col-11 m-auto">
+      <div className="container-fluid">
         {shouldComponentRender() === true ? (
           <div className="full-info">
             <div className="welcome text-secondary">

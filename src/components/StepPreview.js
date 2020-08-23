@@ -8,13 +8,13 @@ const StepPreview = ({ props }) => {
     title, day_recorded, steps_recorded, id,
   } = props;
   return (
-    <div>
+    <div className="container-fluid">
       <Link to={`/steps/${id}`}>
-        <div className="prev-text">
+        <div className="row profile jumbotron">
           <div>
             <p>{day_recorded}</p>
             <p>
-              Age:
+              Weight:
               {title}
             </p>
             <p>
