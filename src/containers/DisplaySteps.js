@@ -19,13 +19,13 @@ const Display = props => {
   };
 
   return (
-    <div className="container-fluid">
+    <div className="container">
       <Nav />
-      <div className="row profile">
+      <div className="row">
         {shouldComponentRender() === true ? (
-          <div className="profile-usertitle-name">
+          <div className="jumbotron">
             {store.steps.steps.map(el => (
-              <div className="d-flex p-5">
+              <div className="d-flex">
                 <ReactStoreIndicator
                   value={el.steps_recorded}
                   maxValue={10000}

@@ -71,6 +71,7 @@ class Dashboard extends React.Component {
                   type="date"
                   required
                   name="day_recorded"
+                  placeholder="Date"
                   value={day_recorded}
                   onChange={this.handleChange}
                   className="form-control"
