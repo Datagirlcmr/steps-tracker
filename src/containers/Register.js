@@ -20,7 +20,7 @@ class Register extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  UNSAFE_componentWillReceiveProps() {
+  componentDidUpdate() {
     const { store, history, fetchUser } = this.props;
     if (store.user.auth_token !== '') {
       fetchUser(store.user.auth_token);
@@ -109,7 +109,7 @@ class Register extends React.Component {
               <i className="zmdi zmdi-lock" />
             </div>
 
-            <button type="button">
+            <button type="submit">
               Register
               <i className="zmdi zmdi-arrow-right" />
             </button>
