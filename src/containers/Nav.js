@@ -21,7 +21,7 @@ const Nav = props => {
   }
   return (
     <nav className="navbar navbar-expand-sm bg-light">
-      <Link className="navbar-brand nav" to="/">
+      <Link className="navbar-brand nav" to="/display">
         StepTrack.it
       </Link>
       <ul className="navbar-nav">
