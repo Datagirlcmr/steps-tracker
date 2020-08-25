@@ -1,10 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
+import { applyMiddleware, createStore } from 'redux';
+import thunk from 'redux-thunk';
+import { composeWithDevTools } from 'redux-devtools-extension';
 import './styles/index.scss';
 import { BrowserRouter as Router } from 'react-router-dom';
-import store from './reducers/index';
+import finalReducer from './reducers/index';
 import App from './components/App';
+
+const middlewares = [thunk];
+
+const store = createStore(finalReducer, composeWithDevTools(applyMiddleware(...middlewares)));
 
 ReactDOM.render(
   <React.StrictMode>
