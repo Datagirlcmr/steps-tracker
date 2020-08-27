@@ -1,68 +1,140 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+# Steps Tracker
 
-In the project directory, you can run:
+> This is a single page application built with react,redux and rails
 
-### `npm start`
+> The app provides a platform where users can track their steps simply by inputting the steps taken each day. Every Input has a time stamp, that way you can track your steps.
+<hr />
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## RoR API Endpoint
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+https://github.com/Datagirlcmr/daily-steps-api
 
-### `npm test`
+## Screenshots and Walkthrough
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+https://www.loom.com/share/dd1bd407504a4ed88a64fc1b59a875c0
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+> To be able to use the app, a user must sign up without which he won't be able to enjoy the full benefits. Attempting to use the app without validation will through errors.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<p align="center"> 
+<img src="./images/home.png">
+</p>
 
-### `npm run eject`
+<hr />
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+> As soon as you register, you will be redirected to your Profile Page. Here the user is presented with the option of either editing their profile or Tracking their steps. 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<p align="center"> 
+<img src="./images/profile.png">
+</p>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<hr />
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+> Choosing to track your steps redirects the user to a form where he is prompted to input his age, steps recorded and a date. Because of the availability of a time stamp, a user can enter their steps as per a day in the past. 
 
-## Learn More
+<p align="center"> 
+<img src="./images/form.png">
+</p>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<hr />
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+> A successfull submission of the steps tracking form redirects the user to an index page displaying all the steps he has entered in the past. Clicking on any of these steps, opens up to more details about that particular input.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+<p align="center"> 
+<img src="./images/all.png">
+</p>
 
-### Analyzing the Bundle Size
+<hr />
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+<p align="center"> 
+<img src="./images/details.png">
+</p>
 
-### Making a Progressive Web App
+<hr />
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+> The remaining pages are the login/signup forms
 
-### Advanced Configuration
+<p align="center"> 
+<img src="./images/signup.png">
+</p>
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+<p align="center"> 
+<img src="./images/login.png">
+</p>
+
+
+## Built With
+
+- javaScript
+- React
+- Rails
+- Sass
+- Redux
+- Node js
+- Heroku
+
+## Live Demo
+
+[Live Demo Link](https://steps-tracker.herokuapp.com/)
+
+## Getting Started
+
+Here are the steps to follow in order to get this project on your local computer.
+
+### Prerequisites
+
+`node v12.16.3 +`
+
+`npm v6.14.4 +`
+
+### Setup
+
+clone this repo by typing `git clone`
+
+### Install
+
+install the dependacies by typing `npm install`
+
+### Usage
+
+start the local server by running `npm start`
 
 ### Deployment
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+this project is deployed on netlify
 
-### `npm run build` fails to minify
+to get the deployment build of the code run `npm run build`
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+### Testing
+
+this project uses jest from testing , to run the tests type `npm test` 
+
+## Authors
+
+👤 **Selma Ndi**
+
+- Github: [@Datagirlcmr](https://github.com/Datagirlcmr)
+- Twitter: [@SelmaNdi](https://twitter.com/SelmaNdi)
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/Datagirlcmr/steps-tracker/issues).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Hat tip to anyone whose code was used
+- Inspiration
+- etc
+
+## 📝 License
+
+This project is [MIT](lic.url) licensed.
